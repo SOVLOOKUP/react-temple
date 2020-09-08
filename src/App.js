@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import {Route,Link,NavLink,Switch, Redirect, withRouter} from 'react-router-dom'
+import {Route,NavLink,Switch, Redirect, withRouter} from 'react-router-dom'
 // import pages
 import Home from './pages/Home'
 import ReduxPage from './pages/ReduxPage';
@@ -24,6 +24,7 @@ function App(props) {
           }}>Redux页面</NavLink>
 
         </div>
+        
       <Switch>
         <Redirect exact from="/" to="/home"/>
 

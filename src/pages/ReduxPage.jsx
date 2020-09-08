@@ -12,7 +12,7 @@ class ReactReduxPage extends Component {
         return (
             <div>
                 <p>{counter}</p>
-                {/* <button onClick={()=>dispatch({type:'add'})}>add</button> */}
+                <button onClick={()=>dispatch({type:'add'})}>add</button>
                 <button onClick={add}>add</button>
                 <button onClick={minus}>minus</button>
                 <button onClick={asncAdd}>asncAdd</button>
