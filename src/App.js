@@ -1,40 +1,26 @@
 import React from 'react'
 import './App.css'
-import {Route,NavLink,Switch, Redirect, withRouter} from 'react-router-dom'
-// import pages
-import Home from './pages/Home/Home'
-import ReduxPage from './pages/Home/ReduxPage';
+import 'antd/dist/antd.css';
 
+// reduxstore
+import {Provider} from 'react-redux';
+import store from './redux/ReactReduxStore';
+
+// router
+import CompileRouter from "qf-router-config"
+import router from "./router"
 
 function App(props) {
-
-  // 监控路由变化
-  props.history.listen((link)=>{
-    console.log(link)
-  })
+  // // 监控路由变化
+  // props.history.listen((link)=>{
+  //   console.log(link)
+  // })
 
   return (
-    <div className="App">
-        <div>
-          <NavLink to="/home">Home页面</NavLink>
-          <br/>
-          {/* 隐式传参 */}
-          <NavLink to={{
-            pathname:"/redux",
-            state:{value:"我是隐式参数"}
-          }}>Redux页面</NavLink>
-        </div>
-        
-      <Switch>
-        <Redirect exact from="/" to="/home/params"/>
-
-        {/* 显式传参 */}
-        <Route path="/home/:id?" component={Home}/>
-
-        <Route path="/redux" component={ReduxPage}/>
-      </Switch>
-    </div>
+    <Provider store={store}>
+      <CompileRouter {...router} />
+    </Provider>
   );
 }
 
-export default withRouter(App);
+export default App;

@@ -1,12 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class Home extends Component {
-
-    render() {
-        return (
-            <div>
-                Hello Word!---显式路由参数{this.props.match.params.id}
-            </div>
-        )
-    }
+export default function Home(props) {
+    return (
+        <div>
+            Hello Word!---显式路由参数{props.match.params.id}
+        </div>
+    )
 }
+
