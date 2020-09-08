@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
-import {add, minus,asncAdd} from "../redux/actions/counterAction"
+import {add, minus,asncAdd} from "../../redux/actions/counterAction"
+import { Button } from 'antd'
 
 class ReactReduxPage extends Component {
     componentDidMount() {
@@ -12,9 +13,9 @@ class ReactReduxPage extends Component {
         return (
             <div>
                 <p>{counter}</p>
-                <button onClick={add}>add</button>
-                <button onClick={minus}>minus</button>
-                <button onClick={asncAdd}>asncAdd</button>
+                <Button type="primary" onClick={add}>add</Button>
+                <Button onClick={minus}>minus</Button>
+                <Button type="primary" onClick={asncAdd}>asncAdd</Button>
             </div>
         )
     }

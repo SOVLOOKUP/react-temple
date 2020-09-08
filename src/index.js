@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import 'antd/dist/antd.css';
 import App from './App';
 
-import store from './redux/ReactReduxStore';
+// reduxstore
 import {Provider} from 'react-redux';
+import store from './redux/ReactReduxStore';
+
+// router
 import { BrowserRouter } from 'react-router-dom';
 
 // const render = () => {
     ReactDOM.render(
-        <BrowserRouter><Provider store={store}>
-            <App />
-        </Provider></BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Provider>
     , document.getElementById('root'));
 // }
