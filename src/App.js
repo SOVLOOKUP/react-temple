@@ -8,7 +8,7 @@ import store from './redux/ReactReduxStore';
 
 // router
 import CompileRouter from "qf-router-config"
-import router from "./router"
+import router from "./router/router"
 
 function App(props) {
   // // 监控路由变化

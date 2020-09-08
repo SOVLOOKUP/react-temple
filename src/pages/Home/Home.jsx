@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Home(props) {
+function Home(props) {
     return (
         <div>
             Hello Word!---显式路由参数{props.match.params.id}
@@ -8,3 +8,4 @@ export default function Home(props) {
     )
 }
 
+export default Home;
